@@ -1,0 +1,50 @@
+{% extends 'basic.html'%}
+{% load static %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>This is notes page</h1> -->
+    <div class="container my-3">
+        <div class="m1"> <h1>Welcome to Magic Notes</h1></div>
+        <div class="card">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <div class="form-group">
+                    <h5 class="card-title">Add title</h5>
+                    <input type="text" class="form-control" id="addTitle" placeholder="Enter title">
+                </div>
+                <h5 class="card-title">Add a Note</h5>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"></label>
+                    <textarea class="form-control" id="addTxt" rows="3"></textarea>
+                </div>
+                <a class="btn btn-primary" id="addBtn">Add Note</a>
+            </div>
+        </div>
+        <hr>
+        <div class="m2"><h1>Your Notes</h1></div>
+        <hr>
+        <div id="notes" class="row container-fluid">
+            <!-- <div class="noteCards mx-2 my-2 card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Note</h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary">Delete Note</a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="{% static 'js/note.js'%}"></script>
+</body>
+</html>
+
+{% endblock %}
