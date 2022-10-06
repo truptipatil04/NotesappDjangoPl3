@@ -1,0 +1,80 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title %} Login Page {% endblock %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+
+    <style>
+        /* body{
+            background-color: rgb(209, 254, 238);
+            margin-left: 20px;
+        } */
+
+        .container{
+            background-image: url("{% static 'accounts/loginimg.jpg' %}");
+            background-size: cover; 
+            height: 520px; 
+            max-width: 100%;
+            padding-top: 80px; 
+            text-align: center
+            /* width: 7000px; */
+            /* padding-top: 40px; 
+            padding-right: 70px; */
+            /* text-align: center; */
+        }
+
+        /* .container{
+            float: right;
+            width: 50%;
+            border: 5px solid green;
+            margin-top: 30px;
+            margin-left: 120px;
+            margin-right: 200px;
+         } */
+
+        .loginform{
+            text-align: center;
+            /* margin-top: 10px; */
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .msgdiv1{
+            padding-top: 10px;
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="loginform">
+            <form action="" method="POST">
+                {% csrf_token %}
+                Username : <input type="text" name="username" placeholder="Username"><br><br>
+                Password : <input type="password" name="password" placeholder="Password"><br><br>
+                <input class="btn btn-primary" type="submit" value="Login"><br>
+            </form>
+        </div>
+
+        <div class="msgdiv1">
+            {% for message in messages %}
+                <h3>{{ message }}</h3>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

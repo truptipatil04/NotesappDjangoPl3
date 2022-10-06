@@ -1,0 +1,158 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Registration Page {% endblock %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="register.css">
+    <style>
+    
+        /* body{
+            background-color: rgb(209, 254, 238);
+        }  */
+
+        .content{
+            float: left;
+            padding-left: 80px;
+            /* padding-top: 140px; */
+            text-align: center;
+        }
+
+        h1,h3{
+            font-style: italic;
+            /* font-size: xx-large; */
+            color: rgb(137, 52, 7);
+        }
+
+        #main-container{
+            background-image: url("{% static 'accounts/notebg.jpg' %}");
+            background-size: cover; 
+            height: 550px; 
+            padding-top: 40px; 
+            padding-right: 70px;
+            text-align: center;
+        }
+
+        .container{
+            background-color: aliceblue;
+            float: right;
+            border: 3px solid black;
+            border-radius: 20px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            width: 40%;
+            height: auto;
+        }
+
+        .registerform{
+            float: right;
+            text-align: center;
+            margin-top: 20px;
+            padding-right: 30px;
+            /* border: 3px solid blue; */
+            /* display: grid; */
+        }
+
+        /* .img{
+            margin-top: 50px;
+            float: left;
+            max-width: 100%;
+            height: 1000px; */
+            /* height:auto; */
+            /* width: 500px;
+        /* }  */
+
+        .c1{
+            margin-top: 30px;
+        }
+
+
+        .msgdiv0{
+            padding-top: 10px;
+            text-align: center;
+            color: red;
+        }
+
+        .n1{
+            margin-top: 70px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="main-container">
+        <div class="content">
+            <h1>Welcome to Magic notes...</h1>
+            <h3>Write it down...</h3>
+        </div>
+        <div class="container">
+            <div class="registerform">
+                <form id="registration" action="" method="POST">
+                    {% csrf_token %}
+                    <b>Username         : </b><input type="text" name="username" placeholder="User Name"><br><br>
+                    <b>First Name       : </b><input type="text" name="firstname" placeholder="First Name"><br><br>
+                    <b>Last Name        : </b><input type="text" name="lastname" placeholder="Last Name"><br><br>
+                    <b>Email            : </b><input type="email" name="email" placeholder="Email"><br><br>
+                    <b>Password         : </b><input type="password" name="password1" placeholder="Password"><br><br>
+                    <b>Confirm Password : </b><input type="password" name="password2" placeholder="Confirm Password"><br><br>
+            
+                    <input class="btn btn-primary" type="submit" value="Register"><br>
+                    <a href="login">Already exist an account?</a>
+                </form>
+            </div>
+
+            <div class="msgdiv0">
+                {% for message in messages %}
+                    <h4>{{ message }}</h4>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="container">
+        <div class="registerform">
+            <form id="registration" action="" method="POST">
+                {% csrf_token %}
+                Username        :   <input type="text" name="username" placeholder="User Name"><br><br>
+                First Name      :   <input type="text" name="firstname" placeholder="First Name"><br><br>
+                Last Name       :   <input type="text" name="lastname" placeholder="Last Name"><br><br>
+                Email           :   <input type="email" name="email" placeholder="Email"><br><br>
+                Password        :   <input type="password" name="password1" placeholder="Password"><br><br>
+                Confirm Password:   <input type="password" name="password2" placeholder="Confirm Password"><br><br>
+        
+                <input class="btn btn-primary" type="submit" value="Register"><br>
+                <a href="login">Already exist an account?</a>
+            </form>
+        </div> -->
+
+        <!-- <div class="c1">
+            <div class="img">
+                <img src="{% static 'accounts/notebg.jpg' %}" alt="error">
+            </div>
+            <div class="n1">
+                <h3>Welcome to notes making app!</h3>
+                <h4>Note it down...</h4>
+            </div>
+        </div> -->
+
+        <!-- <div class="msgdiv0">
+            {% for message in messages %}
+                <h3>{{ message }}</h3>
+            {% endfor %}
+        </div> -->
+    <!-- </div> -->
+
+</body>
+</html>
+
+{% endblock%}
