@@ -2,7 +2,7 @@
     background-color: rgb(202, 237, 244);
     color: #fff;
   }
-
+/* 
   #footer{
     height: 400px;
     width: 100%;
@@ -10,8 +10,8 @@
     /* padding: 7% 15% 15% 15%; */
     /* margin-bottom: auto; */
     /* padding-top: 7%; */
-    text-align: center;
-  }
+    /* text-align: center;
+  }  */
 
   .social-icon{
       margin: 20px 10px;
@@ -29,19 +29,30 @@
   }
 
 .testimonial-text{
-    font-size: 3rem;
+    color: rgb(10, 131, 212);
+    text-align: center;
+    font:bold;
+    font-weight: bold;
+    font-size: 50px;
+   
+    font-family:'Times New Roman', Times, serif;
+    /* font-size: 3rem; */
     line-height: 1.5;
 }
 
 .testimonial-image{
-    width: 10%;
-    border-radius: 100%;
-    margin: 20px;
+    width: 20%;
+    border-radius: 50%;
+    margin: 10px;
     text-align: center;
 }
 
 .carousel-item{
-  padding: 7% 15%;
+  /* padding: 2px 12px; */
+  margin-top: 20px;
+  padding-left: 60px;
+  /* margin-right: 100px; */
+  text-align: center;
 }
 .b1{
     padding: 15px 25px;
@@ -70,6 +81,7 @@
 
 /* Slideshow container */
 .slideshow-container {
+    background-color: aqua;
     width: 100%;
     padding-top: 3%;
     max-width: 700px;
@@ -111,10 +123,11 @@
     transition: background-color 0.6s ease;
   }
   
- 
-  
-  /* Fading animation */
-  .fade {
+  /* .active {
+    
+    background-color: #f6f6f4;
+  } */
+   .fade {
     animation-name: fade;
     animation-duration: 1.5s;
   }
@@ -128,3 +141,5 @@
   @media only screen and (max-width: 300px) {
     .text {font-size: 11px}
   }
+  /* Fading animation */
+ 
